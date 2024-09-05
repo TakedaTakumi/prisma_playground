@@ -1,0 +1,19 @@
+{
+  "name": "prisma_playground",
+  "module": "index.ts",
+  "type": "module",
+  "scripts": {
+    "gen": "prisma generate"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "prisma-dbml-generator": "^0.12.0"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@prisma/client": "5.19.1",
+    "prisma": "^5.19.1"
+  }
+}

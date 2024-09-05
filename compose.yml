@@ -1,0 +1,34 @@
+services:
+  db:
+    image: postgres:15.8
+    profiles:
+      - db
+    ports:
+      - ${POSTGRES_PORT:?POSTGRES_PORT is not found}:${POSTGRES_PORT:?POSTGRES_PORT is not found}
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    environment:
+      TZ: "Asia/Tokyo"
+      POSTGRES_USER: ${POSTGRES_USER:?POSTGRES_USER is not found}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?POSTGRES_PASSWORD is not found}
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+  playground:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      network: host
+    working_dir: /prisma_playground
+    volumes:
+      - .:/prisma_playground
+      - node-modules:/prisma_playground/node_modules
+    ports:
+      - 5555:5555
+    tty: true
+    stdin_open: true
+volumes:
+  node-modules:
+  postgres-data:

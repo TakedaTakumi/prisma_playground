@@ -1,0 +1,61 @@
+{
+  "name": "Prisma Playground",
+  "dockerComposeFile": "./compose.yml",
+  "service": "playground",
+  "shutdownAction": "none",
+  "workspaceFolder": "/prisma_playground",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "cSpell.words": [
+          "devcontainer",
+          "usecase",
+          "datasource",
+          "dbml"
+        ],
+        "cSpell.ignoreWords": [""],
+        "cSpell.ignorePaths": [
+          "vscode-extension",
+          ".git/objects",
+          ".vscode",
+          ".vscode-insiders",
+          "node_modules"
+        ],
+        "cSpell.enableFiletypes": [
+          "!json",
+          "!markdown",
+          "prisma"
+        ],
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2,
+        "editor.formatOnSave": true,
+        "markdown-preview-enhanced.breakOnSingleNewLine": false,
+        "markdown-preview-enhanced.scrollSync": false,
+        "files.autoSave": "afterDelay",
+        "git-graph.commitDetailsView.location": "Docked to Bottom",
+        "markdown.preview.scrollEditorWithPreview": false,
+        "[prisma]": { "editor.defaultFormatter": "Prisma.prisma" },
+        "prisma.scriptRunner": "bunx"
+      },
+      // cSpell: disable
+      "extensions": [
+        "ms-azuretools.vscode-docker",
+        "oderwat.indent-rainbow",
+        "yzhang.markdown-all-in-one",
+        "shd101wyy.markdown-preview-enhanced",
+        "noy-shimotsuki.hyogai-kanji-checker",
+        "streetsidesoftware.code-spell-checker",
+        "mhutchie.git-graph",
+        "GitHub.vscode-pull-request-github",
+        "eamodio.gitlens",
+        "GitHub.copilot",
+        "jock.svg",
+        "heaths.vscode-guid",
+        "Prisma.prisma",
+        "ckolkman.vscode-postgres"
+      ]
+      // cSpell: enable
+    }
+  },
+  "postCreateCommand": "git config --global --add safe.directory /prisma_playground"
+}
