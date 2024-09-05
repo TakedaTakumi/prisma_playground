@@ -1,0 +1,2 @@
+# prisma_playground
+prismaとDBMLを使ってテーブル設計するための環境
