@@ -21,6 +21,11 @@
           ".vscode-insiders",
           "node_modules"
         ],
+        "cSpell.enableFiletypes": [
+          "!json",
+          "!markdown",
+          "prisma"
+        ],
         "editor.insertSpaces": true,
         "editor.tabSize": 2,
         "editor.formatOnSave": true,
@@ -29,7 +34,8 @@
         "files.autoSave": "afterDelay",
         "git-graph.commitDetailsView.location": "Docked to Bottom",
         "markdown.preview.scrollEditorWithPreview": false,
-        "[prisma]": { "editor.defaultFormatter": "Prisma.prisma" }
+        "[prisma]": { "editor.defaultFormatter": "Prisma.prisma" },
+        "prisma.scriptRunner": "bunx"
       },
       // cSpell: disable
       "extensions": [
