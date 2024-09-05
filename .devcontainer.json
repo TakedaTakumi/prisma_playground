@@ -10,7 +10,8 @@
         "cSpell.words": [
           "devcontainer",
           "usecase",
-          "datasource"
+          "datasource",
+          "dbml"
         ],
         "cSpell.ignoreWords": [""],
         "cSpell.ignorePaths": [
@@ -30,6 +31,7 @@
         "markdown.preview.scrollEditorWithPreview": false,
         "[prisma]": { "editor.defaultFormatter": "Prisma.prisma" }
       },
+      // cSpell: disable
       "extensions": [
         "ms-azuretools.vscode-docker",
         "oderwat.indent-rainbow",
