@@ -175,3 +175,5 @@ dist
 
 # Generated DBML files
 dbml/
+.plan/
+dbml-error.log
