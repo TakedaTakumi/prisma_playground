@@ -1,0 +1,22 @@
+{
+  "language": "en",
+  "words": [
+    "devcontainer",
+    "usecase",
+  ],
+  "ignoreWords": [],
+  "ignorePaths": [
+    "vscode-extension",
+    ".git/objects",
+    ".vscode",
+    ".vscode-insiders",
+    "node_modules",
+    ".pnpm-store",
+    "pnpm-lock.yaml",
+    "pnpm-workspace.yaml",
+    "doc/*",
+    "dist/*",
+    "prisma/migrations/*",
+    "coverage/*"
+  ]
+}
