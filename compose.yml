@@ -25,6 +25,8 @@ services:
     volumes:
       - .:/prisma_playground
       - node-modules:/prisma_playground/node_modules
+      - ~/.ssh:/home/node/.ssh:ro
+      - ~/.gitconfig:/home/node/.gitconfig:ro
     ports:
       - 5555:5555
     tty: true
