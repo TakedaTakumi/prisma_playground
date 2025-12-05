@@ -177,3 +177,5 @@ dist
 dbml/
 .plan/
 dbml-error.log
+
+.pnpm-store

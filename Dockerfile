@@ -1,11 +1,35 @@
-FROM oven/bun:1.1
+FROM node:22 AS base
 
-RUN apt-get update && apt-get install -y --no-install-recommends \
-	git \
-	&& rm -rf /var/lib/apt/lists/*
+ENV PNPM_HOME="/pnpm"
+ENV PATH="$PNPM_HOME:$PATH"
+RUN corepack enable
+
+# タイムゾーン設定
+RUN apt-get update && apt-get install -y tzdata \
+    && ln -fs /usr/share/zoneinfo/Asia/Tokyo /etc/localtime \
+    && dpkg-reconfigure -f noninteractive tzdata
+
+ENV TZ=Asia/Tokyo
+
+ARG USERNAME=node
+
+FROM base
+
+# package.jsonで指定されたバージョンのpnpmを準備
+RUN corepack install -g pnpm@10.18.3
+
+RUN mkdir -p /prisma_playground /pnpm && \
+  chown -R ${USERNAME}:${USERNAME} /prisma_playground /pnpm
 
 WORKDIR /prisma_playground
 
-COPY . ./
+COPY --chown=${USERNAME}:${USERNAME} package.json pnpm-lock.yaml ./
 
-CMD ["/bin/sh", "-c", "bun install && bun prisma studio"]
+USER ${USERNAME}
+
+RUN pnpm install
+
+COPY --chown=${USERNAME}:${USERNAME} prisma ./prisma
+RUN pnpm gen
+
+

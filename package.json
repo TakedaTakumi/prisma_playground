@@ -7,8 +7,8 @@
     "dbml": "bun tools/prisma-to-dbml.ts"
   },
   "devDependencies": {
-    "@types/bun": "latest",
-    "@dbml/cli": "^3.6.2"
+    "@types/node": "^24.10.1",
+    "prisma-dbml-generator": "^0.12.0"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"

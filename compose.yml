@@ -28,7 +28,6 @@ services:
     ports:
       - 5555:5555
     tty: true
-    stdin_open: true
 volumes:
   node-modules:
   postgres-data:
